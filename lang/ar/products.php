@@ -39,7 +39,7 @@ return [
 
     // Search
     'search_placeholder' => 'ابحث عن المنتجات بالاسم...',
-    'search_by_name' => 'اكتب اسم المنتج بالانجليزيه',
+    'search_by_name' => 'اكتب اسم المنتج بالانجليزيه او جزء من اسم المنتج',
     'search_results_for' => 'نتائج البحث عن',
     'no_results' => 'لم يتم العثور على منتجات مطابقة لـ',
     'try_different_term' => 'جرب كلمة بحث مختلفة.',

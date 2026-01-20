@@ -7,30 +7,27 @@
     <div class="col-md-10">
         <div class="card mb-4">
             <div class="card-header">
-                <h4 class="mb-0"><i class="bi bi-search"></i> Search Products</h4>
+                <h4 class="mb-0"><i class="bi bi-search"></i> {{ __('products.search_products') }}</h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('products.search') }}" method="GET">
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" name="q" 
-                               placeholder="Type product name (e.g., pana for Panadol)" 
+                               placeholder="{{ __('products.search_by_name') }}" 
                                value="{{ $search ?? '' }}" autofocus>
                         <button class="btn btn-primary" type="submit">
-                            <i class="bi bi-search"></i> Search
+                            <i class="bi bi-search"></i> {{ __('message.search') }}
                         </button>
                     </div>
-                    <small class="text-muted">
-                        Tip: Try searching for partial names like "pana" to find all Panadol products
-                    </small>
                 </form>
             </div>
         </div>
 
         @if(isset($search) && $search)
             <h5 class="mb-3">
-                Search Results for: <strong>"{{ $search }}"</strong>
+                {{__('products.search_results_for')}}: <strong>"{{ $search }}"</strong>
                 @if($products->total() > 0)
-                    <span class="badge bg-primary">{{ $products->total() }} found</span>
+                    <span class="badge bg-primary">{{ $products->total() }} {{__('message.results')}}</span>
                 @endif
             </h5>
 
@@ -60,7 +57,7 @@
                                             </p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span class="text-primary fw-bold fs-5">
-                                                    ${{ number_format($product->price, 2) }}
+                                                    EGP{{ number_format($product->price, 2) }}
                                                 </span>
                                                 <span class="badge bg-{{ $product->quantity > 0 ? 'success' : 'danger' }}">
                                                     Stock: {{ $product->quantity }}
@@ -69,7 +66,7 @@
                                             <div class="mt-2">
                                                 <a href="{{ route('products.show', $product->id) }}" 
                                                    class="btn btn-sm btn-primary">
-                                                    <i class="bi bi-eye"></i> View Details
+                                                    <i class="bi bi-eye"></i> {{__('products.product_details')}}
                                                 </a>
                                             </div>
                                         </div>

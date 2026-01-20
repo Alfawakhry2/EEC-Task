@@ -24,13 +24,6 @@
                     <strong>{{__('products.base_price')}}</strong> 
                     <span class="text-primary fs-4">${{ number_format($product->price, 2) }}</span>
                 </div>
-<!-- 
-                <div class="mb-3">
-                    <strong>{{__('products.total_quantity')}}</strong> 
-                    <span class="badge bg-{{ $product->quantity > 0 ? 'success' : 'danger' }} fs-6">
-                        {{ $product->quantity }}
-                    </span>
-                </div> -->
 
                 @if($product->description)
                     <div class="mb-3">

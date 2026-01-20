@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Starting database seeding...');
         
         $this->command->info('Creating products...');
-        $this->createProducts(1000); // You can change this to 50000 for production
+        $this->createProducts(1000); 
         
         $this->command->info('Creating pharmacies...');
-        $this->createPharmacies(200); // You can change this to 20000 for production
+        $this->createPharmacies(200);
         
         $this->command->info('Creating pharmacy-product relationships...');
         $this->createPharmacyProductRelationships();

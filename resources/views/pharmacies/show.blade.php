@@ -153,14 +153,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4">
-                                <div class="card bg-success text-white">
-                                    <div class="card-body text-center">
-                                        <h6>Avg Price</h6>
-                                        <h4>${{ number_format($pharmacy->products->avg('pivot.price'), 2) }}</h4>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="col-md-4">
                                 <div class="card bg-success text-white">
                                     <div class="card-body text-center">
@@ -188,7 +180,7 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Add CSRF token to all AJAX requests
+    // Add CSRF token to all AJAX requests  (add it to app layout)
     const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
     
     // Handle pharmacy product quantity update buttons
@@ -221,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 if (data.success) {
                     // Success
-                    statusElement.textContent = '✓ Updated!';
+                    statusElement.textContent = 'Updated';
                     statusElement.className = 'text-success pharmacy-quantity-status';
                     
                     // Update badge
@@ -237,13 +229,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 2000);
                 } else {
                     // Error
-                    statusElement.textContent = '✗ ' + data.message;
+                    statusElement.textContent =  data.message;
                     statusElement.className = 'text-danger pharmacy-quantity-status';
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                statusElement.textContent = '✗ Update failed';
+                statusElement.textContent = 'Update failed';
                 statusElement.className = 'text-danger pharmacy-quantity-status';
             })
             .finally(() => {

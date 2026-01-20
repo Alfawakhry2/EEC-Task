@@ -74,7 +74,6 @@ class PharmacyProductController extends Controller
     }
     /**
      * Get available products that can be added to pharmacy
-     * 
      * GET /api/pharmacies/{pharmacyId}/available-products
      */
     public function create($pharmacyId): JsonResponse

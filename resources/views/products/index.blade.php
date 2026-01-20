@@ -165,7 +165,7 @@
                         .then(data => {
                             if (data.success) {
                                 // Success
-                                statusElement.textContent = '✓ Updated!';
+                                statusElement.textContent = 'Updated!';
                                 statusElement.className = 'text-success quantity-status';
 
                                 // Update badge
@@ -178,13 +178,13 @@
                                 }, 2000);
                             } else {
                                 // Error
-                                statusElement.textContent = '✗ ' + data.message;
+                                statusElement.textContent =  data.message;
                                 statusElement.className = 'text-danger quantity-status';
                             }
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            statusElement.textContent = '✗ Update failed';
+                            statusElement.textContent = 'Update failed';
                             statusElement.className = 'text-danger quantity-status';
                         })
                         .finally(() => {
