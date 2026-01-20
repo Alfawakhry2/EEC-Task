@@ -1,0 +1,567 @@
+{
+  "info": {
+    "_postman_id": "e51a038f-2d91-4566-8525-37398f7ea49c",
+    "name": "EEC Task",
+    "description": "This Collection Contain Product managment , Pharmacy Managment  \nand Product can be found in many Pharmacy and vice versa .",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29335427",
+    "_collection_link": "https://go.postman.co/collection/29335427-e51a038f-2d91-4566-8525-37398f7ea49c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "pana",
+                  "disabled": true
+                },
+                {
+                  "key": "per_page",
+                  "value": "6",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Product Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/products/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "pana",
+                  "disabled": true
+                },
+                {
+                  "key": "per_page",
+                  "value": "6",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search For Product",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/products-search?q=anti",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products-search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "anti"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add New Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    // if need to add image ,  use form data\r\n    \"title\": \"Aspirin 200mg\",\r\n    \"description\": \"Pain relief\",\r\n    \"price\": 15.99,\r\n    \"quantity\": 100\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "9d6c11bf-70d2-4302-a9de-70e246ce3c3b",
+                  "src": "/F:/projecttt/abosha2/LastError/Screens/2.png",
+                  "disabled": true
+                },
+                {
+                  "key": "title",
+                  "value": "new asp",
+                  "type": "text",
+                  "uuid": "b6fbc773-e2dc-4ee5-8b37-6f47218aa46c",
+                  "disabled": true
+                },
+                {
+                  "key": "quantity",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "c0628136-555d-44d9-8126-1deb2cd3067f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/products/1000?_method=put",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "1000"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "put"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "9d6c11bf-70d2-4302-a9de-70e246ce3c3b",
+                  "src": "/F:/projecttt/abosha2/LastError/Screens/2.png",
+                  "disabled": true
+                },
+                {
+                  "key": "title",
+                  "value": "new asp",
+                  "type": "text",
+                  "uuid": "b6fbc773-e2dc-4ee5-8b37-6f47218aa46c",
+                  "disabled": true
+                },
+                {
+                  "key": "quantity",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "c0628136-555d-44d9-8126-1deb2cd3067f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/products/1001?_method=delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "1001"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "delete"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pharmacies",
+      "item": [
+        {
+          "name": "Get All Pharmacies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pharmacies?search=mashtool&per_page=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "mashtool"
+                },
+                {
+                  "key": "per_page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Pharmacy Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pharmacies/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add New Pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Mashtool Pharmacy\",\r\n    \"address\": \"456 Oak St, Alexandria, Egypt\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pharmacies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Mashtool Pharmacy\",\r\n    \"address\": \"456 Oak St, Alexandria, azaafsa\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/pharmacies/1?_method=put",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "put"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pharmacies/201?_method=delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "201"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "delete"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy Products",
+      "item": [
+        {
+          "name": "Get Products In Pharmacy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/pharmacies/201/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "201",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product Details Related to Pharmacy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pharmacies/202/products/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "202",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Products To Specific Pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "de9ee518-4025-4d56-81e5-8cddd9a6080b"
+                },
+                {
+                  "key": "price",
+                  "value": "250",
+                  "type": "text",
+                  "uuid": "ce61cf9b-b6df-4923-9e83-c539e700f07d"
+                },
+                {
+                  "key": "quantity",
+                  "value": "20",
+                  "type": "text",
+                  "uuid": "909028ac-cf0b-4e00-9d2e-79cdcf53b26d"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/pharmacies/202/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "202",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Products Quantity and Price In specific pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "price",
+                  "value": "50",
+                  "type": "text",
+                  "uuid": "43799c8a-55e2-45b0-ba22-991f68104c8a",
+                  "disabled": true
+                },
+                {
+                  "key": "quantity",
+                  "value": "25",
+                  "type": "text",
+                  "uuid": "ccff2bf3-8ebe-4693-a4e2-9310c6f2d360"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/pharmacies/202/products/1?_method=put",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "202",
+                "products",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "put"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Product From Pharmacy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/pharmacies/202/products/1?_method=delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "pharmacies",
+                "202",
+                "products",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "_method",
+                  "value": "delete"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
