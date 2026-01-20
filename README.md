@@ -65,9 +65,8 @@ php artisan serve
 
 **Find 5 cheapest pharmacies for a product**
 
-php artisan products:search-cheapest {product_id}
+php artisan products:search-cheapest {product_id}   , example : php artisan products:search-cheapest 1
 
-# example
-php artisan products:search-cheapest 1
-
-
+# API Collection and published collection postman via these links
+- link collection in postman : https://www.postman.com/go-grow/workspace/go-grow-workspace/collection/29335427-e51a038f-2d91-4566-8525-37398f7ea49c?action=share&creator=29335427
+- published link : https://documenter.getpostman.com/view/29335427/2sBXVihVR8 
