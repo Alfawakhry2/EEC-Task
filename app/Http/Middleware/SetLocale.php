@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use App;
+use Closure;
+use Illuminate\Http\Request;
+use Session;
+use Symfony\Component\HttpFoundation\Response;
+
+class SetLocale
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        // Get locale from session, or use default from config
+        $locale = Session::get('locale', config('app.locale'));
+
+        // Validate locale (only allow 'en' or 'ar')
+        if (!in_array($locale, ['en', 'ar'])) {
+            $locale = config('app.locale');
+        }
+
+        // Set application locale
+        App::setLocale($locale);
+        
+        return $next($request);
+    }
+}
