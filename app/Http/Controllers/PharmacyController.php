@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePharmacyRequest;
+use App\Http\Requests\UpdatePharmacyRequest;
 use App\Services\PharmacyService;
 use Illuminate\Http\Request;
 
@@ -76,7 +77,7 @@ class PharmacyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePharmacyRequest $request, string $id)
     {
         $validated = $request->validated();
         $pharmacy = $this->pharmacyService->updatePharmacy($id, $validated);

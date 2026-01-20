@@ -5,7 +5,7 @@
 - Laravel 10.x  ,  PHP 8.1+  ,  MySQL 8.0+
 
 **Frontend:**
-- Bootstrap 5.3  , Bootstrap Icons
+- Bootstrap 5.3  , Bootstrap Icons (should use internet using CDNs)
 
 **Tools:**
 Composer  , Git
@@ -67,6 +67,7 @@ php artisan serve
 
 php artisan products:search-cheapest {product_id}   , example : php artisan products:search-cheapest 1
 
-# API Collection and published collection postman via these links
-- link collection in postman : https://www.postman.com/go-grow/workspace/go-grow-workspace/collection/29335427-e51a038f-2d91-4566-8525-37398f7ea49c?action=share&creator=29335427
-- published link : https://documenter.getpostman.com/view/29335427/2sBXVihVR8 
+# API Collection and published collection of postman via these method
+1 - link collection in postman : https://www.postman.com/go-grow/workspace/go-grow-workspace/collection/29335427-e51a038f-2d91-4566-8525-37398f7ea49c?action=share&creator=29335427
+2 - published link : https://documenter.getpostman.com/view/29335427/2sBXVihVR8 
+3 - import file in project folder named (EEC Task.postman_collection.json) to your postman 
